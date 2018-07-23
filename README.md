@@ -44,23 +44,23 @@ To keep this guide simple and easy to understand, we've used Express to set up a
 Create an empty directory for your project, let’s name it “testApp”. Now, open up your command prompt and clone this repository into the directory created.
 
 ### Adding in the public key
-Insert your public key into a file named "key.pem" and put it between '-----BEGIN PUBLIC KEY-----' and '-----END PUBLIC KEY-----'.
+Open up the public_key.pem file and replace the placeholder that says ENTER_PUBLIC_KEY_HERE with your public key. The result should look like this:
 
-```Markdown
+```plain
   -----BEGIN PUBLIC KEY-----
-  'MIIabcdNBgkqhkiG9w0BAQ4AAOCA338AMIIBCgKCAQEAwISbN8vv0HeUCPN9o29xCUzCsh0ZUM+wdc3Gi3+DfyO4rPec1f/uxFbw0Dscw1iEA1dUfQ5eKhhsOIPdjk//gOGQbBVmQ8DhDcGVGWrHrE/n/K/x0ZkIae4n4eNobK96Ic/C4YmXf5LBUmgkOwUM+5VDPxe3rMnm/3TQdJzAcBMIzqNixzseCh4ICYMSahKnkNY5bJGf+8WbT0i+3mHQwvLacAub+wFH6hyT4I7FXOcXmR+HIyD8xwwYLmB4Yy+cMmiDcc1J9KX34C5apXM2A3f2mOtgfM0WSH2NpXmZmpXmzbkbIxEw90N3zERrDb2myJAHAD0MKQ7abcdxPen96dIDAQAB
+  MIIabcdNBgkqhkiG9w0BAQ4AAOCA338AMIIBCgKCAQEAwISbN8vv0HeUCPN9o29xCUzCsh0ZUM+wdc3Gi3+DfyO4rPec1f/uxFbw0Dscw1iEA1dUfQ5eKhhsOIPdjk//gOGQbBVmQ8DhDcGVGWrHrE/n/K/x0ZkIae4n4eNobK96Ic/C4YmXf5LBUmgkOwUM+5VDPxe3rMnm/3TQdJzAcBMIzqNixzseCh4ICYMSahKnkNY5bJGf+8WbT0i+3mHQwvLacAub+wFH6hyT4I7FXOcXmR+HIyD8xwwYLmB4Yy+cMmiDcc1J9KX34C5apXM2A3f2mOtgfM0WSH2NpXmZmpXmzbkbIxEw90N3zERrDb2myJAHAD0MKQ7abcdxPen96dIDAQAB
   -----END PUBLIC KEY-----
 ```
 
 ### Changing the request line
-The request line will need to be changed according to your callback url and request type. For instance, if your callback url is `/mm-rsa-test/` and the method type was `POST` then the resulting request line would look like this:
+The request line will need to be changed according to your callback url and request type. For instance, if your callback url is `/captureData` and the method type was `PATCH` then the resulting request line would look like this:
 ```php
-  $data = "POST /mm-rsa-test/ HTTP/1.1".$date.$body;
+  $data = "PATCH /captureData HTTP/1.1".$date.$body;
 ```
 
 ### Testing
 You are now ready to test the application. Run the web server on your computer that has PHP installed and configured.
-If all goes well, you should receive a `Verified!` response which indicates the verification was a success.
+If all goes well, you should receive a `Verification Successful` response which indicates the verification was a success.
 
 ## :closed_book: API Reference Documentation
 Check out the [full API documentation](https://developers.messagemedia.com/code/secure-webhooks-api-documentation/) for more detailed information.
