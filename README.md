@@ -37,8 +37,10 @@ We welcome your thoughts on how we could best provide you with SDKs that would s
 ## :star: Prerequisite
 To be able to use this SDK, you will need a public key provided by MessageMedia. You can find out how to do this by going through the [Signature Key Management documentation](https://developers.messagemedia.com/code/signature-key-management-api-documentation/). You can then make use of the [Signature Key Management NodeJS SDK](https://github.com/messagemedia/signingkeys-nodejs-sdk) to create and manage your keys.
 
+This SDK assumes that you have pre-configured a webhook that sends data to a url. If you haven't done this, you can read about how to set one up in the [Webhooks API Documentation](https://developers.messagemedia.com/code/webhooks-api-documentation/) or the [Webhooks PHP SDK](https://github.com/messagemedia/webhooks-php-sdk). Alternatively, you can specify a callback_url in the message body of a [send message request](https://github.com/messagemedia/messages-php-sdk#send-an-sms).
+
 ## :clapper: Get Started
-To keep this guide simple and easy to understand, we've used Express to set up a server which will monitor for incoming webhooks. You can setup your own production server and use it instead of the Express one if needed.
+To keep this guide simple and easy to understand, we've used XAMPP to set up a server which will monitor for incoming webhooks. You can setup your own production server and use it instead of the XAMPP one if needed.
 
 ### Initialisation and Installation
 Create an empty directory for your project, let’s name it “testApp”. Now, open up your command prompt and clone this repository into the directory created.
